@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: item-service
+    
+#server:
+#  port: 8001
+
+#eureka注册配置
+#将本项目向两个eureka服务器进行注册
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka,http://eureka1:2001/eureka
+      
+---
+#配置一
+#给这个配置起个名字：item1
+spring:
+  profiles: item1
+  
+server:
+  port: 8001
+---
+#配置二
+#给这个配置起个名字：item2
+spring:
+  profiles: item2
+
+server:
+  port: 8002
+
